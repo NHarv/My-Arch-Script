@@ -22,7 +22,7 @@ clear
 timedatectl set-ntp true
 mkfs.fat -F32 /dev/"${DRIVEVAR}""${EFIVAR}"
 mkfs.ext4 /dev/"${DRIVEVAR}""${SYSVAR}"
-mkfs.ext4 /dev/"${DRIVEVAR}""${HOMEVAR}"
+# mkfs.ext4 /dev/"${DRIVEVAR}""${HOMEVAR}"
 mount /dev/"${DRIVEVAR}""${SYSVAR}" /mnt
 mkdir /mnt/boot
 mkdir /mnt/boot/efi
