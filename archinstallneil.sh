@@ -56,4 +56,4 @@ arch-chroot /mnt passwd "${USERVAR}"
 sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /mnt/etc/sudoers
 arch-chroot /mnt systemctl enable NetworkManager
 exit
-reboot
+
