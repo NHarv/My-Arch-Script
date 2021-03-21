@@ -41,15 +41,14 @@ mkfs.ext4 /dev/"${DRIVEVAR}""${SYSVAR}"
 # Mounting Partitions
 
 mount /dev/"${DRIVEVAR}""${SYSVAR}" /mnt
-mkdir /mnt/boot
-mkdir /mnt/boot/efi
+mkdir -p /mnt/boot/efi
 mount /dev/"${DRIVEVAR}""${EFIVAR}" /mnt/boot/efi
 mkdir /mnt/home
 mount /dev/"${DRIVEVAR}""${HOMEVAR}" /mnt/home
 
 # Installing Base System
 
-pacstrap /mnt base base-devel linux linux-firmware vim networkmanager sudo
+pacstrap /mnt base base-devel linux linux-firmware vim nano networkmanager sudo
 
 # Generating Fstab
 
@@ -115,7 +114,7 @@ arch-chroot /mnt pacman -S xorg xorg-xinit xterm --noconfirm
 
 #Install General Software and AUR
 
-arch-chroot /mnt pacman -S picom nitrogen --noconfirm
+arch-chroot /mnt pacman -S picom nitrogen yay --noconfirm
 
 exit
 
