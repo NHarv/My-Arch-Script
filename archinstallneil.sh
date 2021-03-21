@@ -114,7 +114,8 @@ arch-chroot /mnt pacman -S xorg xorg-xinit xterm --noconfirm
 
 #Install General Software and AUR
 
-arch-chroot /mnt pacman -S picom nitrogen yay --noconfirm
-
+arch-chroot /mnt pacman -S picom nitrogen --noconfirm
+arch-chroot /mnt git clone https://aur.archlinux.org/yay.git
+arch-chroot /mnt cd yay && makepkg -rsi
 exit
 
